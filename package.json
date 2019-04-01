@@ -1,0 +1,30 @@
+{
+  "name": "singlechat",
+  "description": "a realtime chat web application",
+  "version": "0.4.0",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^1.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^2.2.33",
+    "mongodb-autoincrement": "^1.0.1",
+    "multer": "^1.4.1",
+    "path": "^0.12.7",
+    "simple-peer": "^9.1.2",
+    "socket.io": "^2.1.1"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Ashutosh Bajpay",
+  "license": "ISC",
+  "devDependencies": {}
+}

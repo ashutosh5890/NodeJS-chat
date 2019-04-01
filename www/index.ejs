@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="font-awesome.min.css" type="text/css" rel="stylesheet"/>
+<link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<link href="chat.css" rel="stylesheet" type="text/css"/>
+<script src="bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="messaging">
+		<div class="inbox_msg">
+			<div class="inbox_people">
+				<div class="headind_srch">
+					<div class="recent_heading">
+					  <h4>Recent</h4>
+					</div>
+					<div class="srch_bar">
+					  <div class="stylish-input-group">
+						<input type="text" class="search-bar"  placeholder="Search" >
+						<span class="input-group-addon">
+						<button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+						</span> </div>
+					</div>
+				</div>
+				<div class="inbox_chat" id="chat-users">
+				<!-- Chat People will be added here -->
+				</div>
+			</div>
+			<div class="mesgs">
+				<div class="chatting-with chat_people">
+					<div class="chat_img"> <img src="default-male-profile.jpg" alt="sunil"> </div>
+					<div class="chat_ib">
+						<h5 id="chatting-with-name">Anzar Ahmad</h5>
+						<p>Online</p>
+						<input type="hidden" value="'+emp._id+'"/>
+					</div>
+					<button id="videoCallBtn" class="video_btn round_btn" type="button"><img src="images/video-call-48.png"></button>
+				</div>
+				<div class="msg_history" id="msg-container">
+				<!-- Chat Messages will be added here -->
+					<!--<div class="incoming_msg">
+						<div class="incoming_msg_img"> <img src="default-male-profile.jpg" alt="sunil"> </div>
+						<div class="received_msg">
+							<div class="received_withd_msg">
+								<p>
+									<img src="default-male-profile.jpg"/><br/>
+									<span>Lorem ipsum set amatur bcshvb bhbvhjsbhdvb</span>
+								</p>
+								<div class="msg_progress">
+									<div class="pie-wrapper pie-wrapper--solid progress-88">
+										<span class="label">88<span class="smaller">%</span></span>
+									</div>
+								</div>
+								<span class="time_date"> 11:01 AM    |    June 9</span>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<div class="type_msg">
+					<div class="input_msg_write">
+					  <input id="messageInput" type="text" class="write_msg" placeholder="Type a message" />
+					  <input type="file" id="input_file" accept="audio/*,video/*,image/*" />
+					  <button id="attachBtn" class="attach_btn round_btn" type="button"><img src="images/ic_attachment.png"></button>
+					  <button id="sendBtn" class="msg_send_btn round_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<div id="loginWrapper">
+	<div class="form">
+		<ul class="tab-group">
+			<li class="tab active"><a href="#login">Log In</a></li>
+			<li class="tab"><a href="#signup">Sign Up</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="login">   
+				<h1>Welcome Back!</h1>
+				<form action="/" method="post">
+					<div class="field-wrap">
+						<label>
+						  Email Address<span class="req">*</span>
+						</label>
+						<input id="input-email" type="email"required autocomplete="off"/>
+					</div>
+					<div class="field-wrap">
+						<label>
+						  Password<span class="req">*</span>
+						</label>
+						<input id="input-password" type="password"required autocomplete="off"/>
+					</div>
+					<p class="forgot"><a href="#">Forgot Password?</a></p>
+					<button class="button button-block" id="btn-login"/>Log In</button>
+				</form>
+			</div>
+			<div id="signup">   
+				<h1>Sign Up for Free</h1>
+				<form action="/" method="post">
+					<div class="top-row">
+						<div class="field-wrap">
+						  <label>
+							Full Name<span class="req">*</span>
+						  </label>
+						  <input id="register-name" type="text" required autocomplete="off" />
+						</div>
+					</div>
+					<div class="field-wrap">
+						<label>
+						  Email Address<span class="req">*</span>
+						</label>
+						<input id="register-email" type="email"required autocomplete="off"/>
+					</div>
+					<div class="field-wrap">
+						<label>
+						  Set A Password<span class="req">*</span>
+						</label>
+						<input id="register-password" type="password"required autocomplete="off"/>
+					</div>
+					<button class="button button-block" id="btn-signup"/>Get Started</button>
+				</form>
+			</div>
+		</div><!-- tab-content -->
+	</div> <!-- /form -->
+</div>
+<div id="videoWrapper">
+	<div id="videoBox">
+		<div id="streamBox">
+			<video id="streamVideo" controls/>
+		</div>
+		<div id="localBox">
+			<video id="localVideo" controls/>
+		</div>
+	</div>
+	<img id="closeVideoBtn" src="images/close.png"/>
+</div>
+<script>
+var USER_ID = null;
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="scripts/hichat.js"></script>
+<script src="scripts/simplepeer.min.js"></script>
+<script>
+	hichat = new HiChat();
+	if('<%=login%>'=='true'){
+		USER_ID = Number(<%=userId%>);
+		AUTH_TOKEN = '<%=token%>';
+		if(!isNaN(USER_ID)){
+			hichat.init();
+			$('#loginWrapper').css({'display': 'none'});
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+html, body {
+    margin: 0;
+    background-color: #efefef;
+    font-family: sans-serif;
+}
+*{margin:0; padding:0;}
+#container{
+	width: 780px;
+    height: 640px;
+    margin: 0 auto;
+	overflow:hidden;
+}
+.users{
+	width: 270px;
+    height: 640px;
+	background-color: #FFF;
+	border: 5px solid #ddd;
+	float:left;
+}
+.users ul{
+	padding:3px;
+	height: 640px;
+	list-style:none;
+	overflow: scroll;
+    overflow-x: hidden;
+}
+.users ul li{
+	height:52px;
+	padding:10px;
+	list-style:none;
+	border-bottom:1px solid #EEE;
+	clear:both;
+}
+.users ul li:hover{
+	background-color:#EEE;
+}
+.users ul li .img{
+	width:50px;
+	height:50px;
+	float:left;
+}
+.users ul li .name{
+	float:left;
+}
+.users .name h4{
+	font-size:20px;
+}
+.users .name span.status{
+	font-size:14px;
+	color:#437C17;
+}
+.users ul li img{
+	width:40px;
+	height:40px;
+	border-radius:20px;
+}
+.chat-box{
+	width: 500px;
+    height: 640px;
+	float:right;
+}
+.wrapper {
+    height: 640px;
+    padding: 5px;
+    background-color: #ddd;
+}
+#loginWrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, .6);
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding-top: 200px;
+}
+#nickWrapper {
+    display: none;
+}
+.banner {
+    height: 80px;
+    width: 100%;
+}
+.banner p {
+    float: left;
+    display: inline-block;
+}
+.controls {
+    height: 100px;
+    margin: 5px 0px;
+    position: relative;
+}
+#historyMsg {
+    height: 400px;
+    background-color: #fff;
+    overflow: auto;
+    padding: 2px;
+}
+#historyMsg img {
+    max-width: 99%;
+}
+.timespan {
+    color: #ddd;
+}
+.items {
+    height: 30px;
+}
+#colorStyle {
+    width: 50px;
+    border: none;
+    padding: 0;
+}
+/*custom the file input*/
+
+.imageLable {
+    position: relative;
+}
+#sendImage {
+    position: absolute;
+    width: 52px;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+/*end custom file input*/
+
+#messageInput {
+    width: 430px;
+    max-width: 440px;
+    height: 90px;
+    max-height: 90px;
+    float:left;
+}
+#sendBtn {
+    width: 50px;
+    height: 96px;
+    float: right;
+}
+#emojiWrapper {
+    display: none;
+    width: 500px;
+    bottom: 105px;
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 0 0 10px #555;
+}
+#emojiWrapper img {
+    margin: 2px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+}
+#emojiWrapper img:hover {
+    background-color: blue;
+}
+.emoji{
+    display: inline;
+}
+footer {
+    text-align: center;
+}
